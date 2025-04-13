@@ -77,7 +77,10 @@
     const email = document.getElementById('email').value.trim();
     const mensagem = document.getElementById('mensagem').value.trim();
 
-    const texto = `Olá! Gostaria de solicitar um orçamento.*Nome:* ${nome}%0A*E-mail:* ${email}*Mensagem:* ${mensagem}`;
+    const texto = `Olá! Gostaria de solicitar um orçamento.
+*Nome:* ${nome}
+*E-mail:* ${email}
+*Mensagem:* ${mensagem}`;
     const numeroWhatsApp = '5531986985930'; // DDD + número
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURI(texto)}`;
 
