@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vita Ser</title>
+    <script src="https://cdn.tailwindcss.com">
+	
+		function enviarWhatsapp() {
+		const nome = document.getElementById('nome').value.trim();
+		const email = document.getElementById('email').value.trim();
+		const mensagem = document.getElementById('mensagem').value.trim();
+		const texto = `Olá! Gostaria de solicitar um orçamento.%0A%0A*Nome:* ${nome}%0A*E-mail:* ${email}%0A*Mensagem:* ${mensagem}`;
+		const numeroWhatsApp = '5531986985930'; // DDD + número
+		const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURI(texto)}`;
+		window.open(url, '_blank');}
+	</script>
+
+
+    <style>
+      :root {
+        --azul-marinho-claro: #1e3a5f;
+        --amarelo: #facc15;
+      }
+    </style>
+  </head>
+  <body class="bg-[var(--azul-marinho-claro)] text-white font-sans">
+    <header class="p-6 text-center bg-[var(--amarelo)] text-[var(--azul-marinho-claro)] font-bold text-xl">
+      Vita Ser - Engenharia e Serviços
+    </header>
+
+		<section class="p-8 text-center">
+		  <h2 class="text-3xl font-bold mb-6">Nossos Serviços</h2>
+		  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			<div>
+			  <img src="serralheria.png" alt="Serralheria" class="service-img rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer" />
+			  <p class="mt-2 text-lg">Serralheria</p>
+			</div>
+			<div>
+			  <img src="vidraceiro.jpg" alt="Vidraçaria" class="service-img rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer" />
+			  <p class="mt-2 text-lg">Vidraçaria</p>
+			</div>
+			<div>
+			  <img src="pintor.jpg" alt="Pintura" class="service-img rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer" />
+			  <p class="mt-2 text-lg">Pintura</p>
+			</div>
+		  </div>
+
+		  <div id="carousel" class="mt-10 flex overflow-x-auto gap-4 p-4 bg-white rounded-xl text-black">
+			<!-- Imagens adicionadas aparecem aqui -->
+		  </div>
+		</section>
+
+<section class="p-8 text-center">
+  <h2 class="text-3xl font-bold mb-6">Solicite um Orçamento</h2>
+
+  <form id="form-orcamento" class="max-w-md mx-auto space-y-4" onsubmit="return false;">
+    <input type="text" id="nome" name="nome" placeholder="Seu nome" class="w-full p-3 rounded-lg text-black" required />
+    <input type="email" id="email" name="email" placeholder="Seu e-mail" class="w-full p-3 rounded-lg text-black" required />
+    <textarea id="mensagem" name="mensagem" placeholder="Descreva o serviço desejado" class="w-full p-3 rounded-lg text-black" rows="4"></textarea>
+  </form>
+
+  <div class="mt-8">
+    <p class="text-lg mb-2">Peça seu orçamento diretamente pelo WhatsApp:</p>
+    <a
+      href="#"
+      onclick="enviarWhatsapp()"
+      class="inline-block bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform"
+    >
+      Solicitar Orçamento via WhatsApp
+    </a>
+  </div>
+</section>
+
+<script>
+  function enviarWhatsapp() {
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
+
+    const texto = `Olá! Gostaria de solicitar um orçamento.%0A%0A*Nome:* ${nome}%0A*E-mail:* ${email}%0A*Mensagem:* ${mensagem}`;
+    const numeroWhatsApp = '5531986985930'; // DDD + número
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURI(texto)}`;
+
+    window.open(url, '_blank');
+  }
+</script>
+
+    <footer class="p-6 text-center bg-[var(--amarelo)] text-[var(--azul-marinho-claro)]">
+      <p>© 2025 Construtech Serviços. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+      const serviceImages = document.querySelectorAll(".service-img");
+      const carousel = document.getElementById("carousel");
+
+      serviceImages.forEach((img) => {
+        img.addEventListener("click", () => {
+          for (let i = 1; i <= 5; i++) {
+            const newImg = document.createElement("img");
+            newImg.src = img.src;
+            newImg.alt = img.alt + " " + i;
+            newImg.className = "w-40 h-28 object-cover rounded-lg shadow-md";
+            carousel.appendChild(newImg);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
