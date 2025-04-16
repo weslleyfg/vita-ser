@@ -3,110 +3,142 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Vita Ser - Engenharia e Serviços: soluções completas em serralheria, vidraçaria, informática, alvenaria, pintura e móveis planejados." />
     <title>Vita Ser</title>
-    <script src="https://cdn.tailwindcss.com">	
-		function enviarWhatsapp() {
-		const nome = document.getElementById('nome').value.trim();
-		const email = document.getElementById('email').value.trim();
-		const mensagem = document.getElementById('mensagem').value.trim();
-		const texto = `Olá! Gostaria de solicitar um orçamento. *Nome:* ${nome}*E-mail:* ${email} *Mensagem:* ${mensagem}`;
-		const numeroWhatsApp = '5531986985930'; // DDD + número
-		const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURI(texto)}`;
-		window.open(url, '_blank');}
-	</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      function enviarWhatsapp() {
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mensagem = document.getElementById('mensagem').value.trim();
 
+        if (!nome || !email || !mensagem) {
+          alert("Por favor, preencha todos os campos antes de enviar.");
+          return;
+        }
+
+        const texto = `Olá! Gostaria de solicitar um orçamento. *Nome:* ${nome} *E-mail:* ${email} *Mensagem:* ${mensagem}`;
+        const numeroWhatsApp = '5531986985930';
+        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURI(texto)}`;
+        window.open(url, '_blank');
+      }
+    </script>
 
     <style>
       :root {
         --azul-marinho-claro: #1e3a5f;
         --amarelo: #facc15;
       }
+
+      .service-container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .service-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .service-img:hover {
+        transform: scale(1.05);
+      }
+
+      .service-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .service-container:hover .service-caption {
+        display: block;
+      }
     </style>
   </head>
+
   <body class="bg-[var(--azul-marinho-claro)] text-white font-sans">
     <header class="p-6 text-center bg-[var(--amarelo)] text-[var(--azul-marinho-claro)] font-bold text-xl">
       Vita Ser - Engenharia e Serviços
     </header>
 
-		<section class="p-8 text-center">
-		  <h2 class="text-3xl font-bold mb-6">Nossos Serviços</h2>
-		  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-			<div>
-			  <img src="serralheria.png" alt="Serralheria" class="service-img rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer" />
-			  <p class="mt-2 text-lg">Serralheria</p>
-			</div>
-			<div>
-			  <img src="vidraceiro.jpg" alt="Vidraçaria" class="service-img rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer" />
-			  <p class="mt-2 text-lg">Vidraçaria</p>
-			</div>
-			<div>
-			  <img src="pintor.jpg" alt="Pintura" class="service-img rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer" />
-			  <p class="mt-2 text-lg">Pintura</p>
-			</div>
-		  </div>
+    <!-- SERVIÇOS -->
+    <section class="p-8 text-center">
+      <h2 class="text-3xl font-bold mb-6">Nossos Serviços</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="service-container">
+          <img src="serralheria.png" alt="Serralheria" class="service-img" />
+          <div class="service-caption">Serralheria - Estruturas metálicas, portões, grades e muito mais.</div>
+        </div>
+        <div class="service-container">
+          <img src="vidraceiro.jpg" alt="Vidraçaria" class="service-img" />
+          <div class="service-caption">Vidraçaria - Instalação de vidros temperados, janelas e boxes.</div>
+        </div>
+        <div class="service-container">
+          <img src="Notebook.jpg" alt="Notebooks e Computadores" class="service-img" />
+          <div class="service-caption">Assistência técnica em notebooks e computadores.</div>
+        </div>
+        <div class="service-container">
+          <img src="alvenaria.jpg" alt="Alvenaria" class="service-img" />
+          <div class="service-caption">Alvenaria - Reformas, construções e serviços de alvenaria em geral.</div>
+        </div>
+        <div class="service-container">
+          <img src="pintor.jpg" alt="Pintura" class="service-img" />
+          <div class="service-caption">Pintura residencial, predial e artística com acabamento profissional.</div>
+        </div>
+        <div class="service-container">
+          <img src="Planejados.jpg" alt="Móveis Planejados" class="service-img" />
+          <div class="service-caption">Móveis Planejados sob medida para todos os ambientes.</div>
+        </div>
+      </div>
 
-		  <div id="carousel" class="mt-10 flex overflow-x-auto gap-4 p-4 bg-white rounded-xl text-black">
-			<!-- Imagens adicionadas aparecem aqui -->
-		  </div>
-		</section>
+      <!-- Espaço reservado para futuras imagens no carrossel -->
+      <div id="carousel" class="mt-10 flex overflow-x-auto gap-4 p-4 bg-white rounded-xl text-black">
+        <!-- Adicione imagens aqui futuramente -->
+      </div>
+    </section>
 
-<section class="p-8 text-center">
-  <h2 class="text-3xl font-bold mb-6">Solicite um Orçamento</h2>
+    <!-- SOBRE A EMPRESA -->
+    <section class="p-8 bg-white text-[var(--azul-marinho-claro)] text-center">
+      <h2 class="text-3xl font-bold mb-4">Sobre a Vita Ser</h2>
+      <p class="max-w-3xl mx-auto text-lg">
+        A <strong>Vita Ser - Engenharia e Serviços</strong> nasceu com o propósito de oferecer soluções completas em manutenção, reformas e assistência técnica, sempre com profissionalismo, compromisso e qualidade. Nossa equipe é formada por profissionais experientes nas áreas de serralheria, vidraçaria, informática, alvenaria, pintura e móveis planejados. Atendemos com dedicação para transformar projetos em realidade e oferecer mais conforto, segurança e praticidade para nossos clientes.
+      </p>
+    </section>
 
-  <form id="form-orcamento" class="max-w-md mx-auto space-y-4" onsubmit="return false;">
-    <input type="text" id="nome" name="nome" placeholder="Seu nome" class="w-full p-3 rounded-lg text-black" required />
-    <input type="email" id="email" name="email" placeholder="Seu e-mail" class="w-full p-3 rounded-lg text-black" required />
-    <textarea id="mensagem" name="mensagem" placeholder="Descreva o serviço desejado" class="w-full p-3 rounded-lg text-black" rows="4"></textarea>
-  </form>
+    <!-- SOLICITE ORÇAMENTO -->
+    <section class="p-8 text-center">
+      <h2 class="text-3xl font-bold mb-6">Solicite um Orçamento</h2>
+      <form id="form-orcamento" class="max-w-md mx-auto space-y-4" onsubmit="return false;">
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" class="w-full p-3 rounded-lg text-black" required />
+        <input type="email" id="email" name="email" placeholder="Seu e-mail" class="w-full p-3 rounded-lg text-black" required />
+        <textarea id="mensagem" name="mensagem" placeholder="Descreva o serviço desejado" class="w-full p-3 rounded-lg text-black" required></textarea>
+        <button onclick="enviarWhatsapp()" class="bg-[var(--amarelo)] text-[var(--azul-marinho-claro)] px-6 py-3 rounded-lg font-bold hover:opacity-90 transition">
+          Enviar pelo WhatsApp
+        </button>
+      </form>
+    </section>
 
-  <div class="mt-8">
-    <p class="text-lg mb-2">Peça seu orçamento diretamente pelo WhatsApp:</p>
-    <a
-      href="#"
-      onclick="enviarWhatsapp()"
-      class="inline-block bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform"
-    >
-      Solicitar Orçamento via WhatsApp
-    </a>
-  </div>
-</section>
-
-<script>
-  function enviarWhatsapp() {
-    const nome = document.getElementById('nome').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const mensagem = document.getElementById('mensagem').value.trim();
-
-    const texto = `Olá! Gostaria de solicitar um orçamento.
-*Nome:* ${nome}
-*E-mail:* ${email}
-*Serviço:* ${mensagem}`;
-    const numeroWhatsApp = '5531986985930'; // DDD + número
-    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURI(texto)}`;
-
-    window.open(url, '_blank');
-  }
-</script>
-
-    <footer class="p-6 text-center bg-[var(--amarelo)] text-[var(--azul-marinho-claro)]">
-      <p>© 2025 Vita-Ser Engenharia e Serviços. Todos os direitos reservados.</p>
+    <!-- RODAPÉ -->
+    <footer class="bg-[var(--azul-marinho-claro)] text-white text-center py-6 mt-8">
+      <p>&copy; 2025 Vita Ser - Engenharia e Serviços. Todos os direitos reservados.</p>
+      <p>Contato: (31) 98698-5930 | Email: contato@vitaser.com.br</p>
     </footer>
-
-    <script>
-      const serviceImages = document.querySelectorAll(".service-img");
-      const carousel = document.getElementById("carousel");
-
-      serviceImages.forEach((img) => {
-        img.addEventListener("click", () => {
-          for (let i = 1; i <= 5; i++) {
-            const newImg = document.createElement("img");
-            newImg.src = img.src;
-            newImg.alt = img.alt + " " + i;
-            newImg.className = "w-40 h-28 object-cover rounded-lg shadow-md";
-            carousel.appendChild(newImg);
-          }
-        });
-      });
-    </script>
   </body>
 </html>
