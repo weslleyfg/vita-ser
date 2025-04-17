@@ -17,7 +17,10 @@
           return;
         }
 
-        const texto = `Olá! Gostaria de solicitar um orçamento. *Nome:* ${nome} *E-mail:* ${email} *Mensagem:* ${mensagem}`;
+        const texto = `Olá! Gostaria de solicitar um orçamento. 
+        🌟*Nome:* ${nome}
+        🌐*E-mail:* ${email} 
+        📌*Mensagem:* ${mensagem}`;
         const numeroWhatsApp = '5531986985930';
         const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURI(texto)}`;
         window.open(url, '_blank');
