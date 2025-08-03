@@ -1,147 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Vita Ser - Engenharia e Serviços: soluções completas em serralheria, vidraçaria, informática, alvenaria, pintura e móveis planejados." />
-    <title>Vita Ser -  Engenharia e Serviços</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      function enviarWhatsapp() {
-        const nome = document.getElementById('nome').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const mensagem = document.getElementById('mensagem').value.trim();
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rei Dos KKs" />
+  <title>Rei dos KKs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --azul-marinho-claro: #1e3a5f;
+      --amarelo: #facc15;
+    }
+    .selected {
+      border: 2px solid #facc15;
+      background-color: rgba(250, 204, 21, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-[var(--azul-marinho-claro)] text-white font-sans">
+  <!-- HEADER -->
+  <header class="p-4 bg-[var(--amarelo)] flex justify-center items-center shadow-md">
+    <img src="reidoskksletreiro.png" alt="Logo" class="w-32 md:w-48 h-auto" />
+  </header>
 
-        if (!nome || !email || !mensagem) {
-          alert("Por favor, preencha todos os campos antes de enviar.");
-          return;
-        }
+  <!-- PRODUTOS -->
+  <section class="p-8 text-center">
+    <h2 class="text-4xl font-extrabold mb-10">Selecione a Quantidade!</h2>
+    <div id="produtos" class="grid gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 justify-items-center">
+      <!-- Começo do item -->
+      <div onclick="selecionarUnico(this)" class="toggleable bg-white bg-opacity-10 p-3 rounded-xl shadow-lg hover:scale-105 transition cursor-pointer" data-item="10kk">
+        <img src="https://tibiawiki.com.br/images/5/55/Crystal_Coin.gif" alt="10kk" class="w-24 h-24 mx-auto mb-1" />
+        <p class="text-md font-semibold">✅ 10kk</p>
+      </div>
+      <div onclick="selecionarUnico(this)" class="toggleable bg-white bg-opacity-10 p-3 rounded-xl shadow-lg hover:scale-105 transition cursor-pointer" data-item="20kk">
+        <img src="https://tibiawiki.com.br/images/5/55/Crystal_Coin.gif" alt="20kk" class="w-24 h-24 mx-auto mb-1" />
+        <p class="text-md font-semibold">✅ 20kk</p>
+      </div>
+      <div onclick="selecionarUnico(this)" class="toggleable bg-white bg-opacity-10 p-3 rounded-xl shadow-lg hover:scale-105 transition cursor-pointer" data-item="30kk">
+        <img src="https://tibiawiki.com.br/images/5/55/Crystal_Coin.gif" alt="30kk" class="w-24 h-24 mx-auto mb-1" />
+        <p class="text-md font-semibold">✅ 30kk</p>
+      </div>
+      <div onclick="selecionarUnico(this)" class="toggleable bg-white bg-opacity-10 p-3 rounded-xl shadow-lg hover:scale-105 transition cursor-pointer" data-item="40kk">
+        <img src="https://tibiawiki.com.br/images/5/55/Crystal_Coin.gif" alt="40kk" class="w-24 h-24 mx-auto mb-1" />
+        <p class="text-md font-semibold">✅ 40kk</p>
+      </div>
+      <div onclick="selecionarUnico(this)" class="toggleable bg-white bg-opacity-10 p-3 rounded-xl shadow-lg hover:scale-105 transition cursor-pointer" data-item="50kk">
+        <img src="https://tibiawiki.com.br/images/5/55/Crystal_Coin.gif" alt="50kk" class="w-24 h-24 mx-auto mb-1" />
+        <p class="text-md font-semibold">✅ 50kk</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="p-8 bg-white text-[var(--azul-marinho-claro)] text-center">
+    <h2 class="text-3xl font-bold mb-4">Sobre a Rei Dos KKs</h2>
+    <p class="max-w-3xl mx-auto text-lg">
+      A <strong>Empresa Rei dos KKs</strong> nasceu com o propósito de oferecer dinheiro de forma rápida durante sua jogatina.
+      Com qualidade no atendimento, a equipe está pronta para te atender com profissionais experientes sempre que precisar.
+    </p>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section class="p-8 text-center">
+    <h2 class="text-3xl font-bold mb-6">Formulário para solicitação via Whatsapp</h2>
+    <form id="form-orcamento" class="max-w-lg mx-auto space-y-4" onsubmit="enviarFormulario(); return false;">
+      <input type="text" id="nome" name="nome" placeholder="Nome do Personagem" class="w-full p-3 rounded-lg text-black" required pattern="[A-Za-zÀ-ÿ\s]+" />
+      <input type="text" id="contato" name="contato" placeholder="Nome Completo" class="w-full p-3 rounded-lg text-black" required pattern="[A-Za-zÀ-ÿ\s]+" />
+      <input type="tel" id="telefone" name="telefone" placeholder="Telefone" class="w-full p-3 rounded-lg text-black" required pattern="[0-9]+" />
+      <button type="submit" class="bg-green-600 text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition">
+        Enviar mensagem no WhatsApp
+      </button>
+    </form>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-[var(--azul-marinho-claro)] text-white text-center py-6 mt-8">
+    <p>&copy; 2025 Rei dos KKs. Todos os direitos reservados.</p>
+    <p>Contato: (31) 98698-5930 | Email: contato@reidoskks.com.br</p>
+  </footer>
+
+  <script>
+    function enviarFormulario() {
+      const nome = document.getElementById('nome');
+      const contato = document.getElementById('contato');
+      const telefone = document.getElementById('telefone');
+      const selecionado = document.querySelector('.toggleable.selected');
+
+      if (!nome.checkValidity() || !contato.checkValidity() || !telefone.checkValidity()) {
+        alert('Por favor, preencha corretamente todos os campos.');
+        return;
+      }
+
+      if (!selecionado) {
+        alert('Selecione um item antes de enviar.');
+        return;
+      }
+
+      const item = selecionado.dataset.item;
 
       const texto = `Olá! Gostaria de solicitar um orçamento.
-      🌟 *Nome:* ${nome}
-      🌐 *E-mail:* ${email} 
-      📌 *Mensagem:* ${mensagem}`;
-        const numeroWhatsApp = '5531986985930';
-        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURI(texto)}`;
-        window.open(url, '_blank');
-      }
-    </script>
+*Nome do Personagem:* ${nome.value.trim()}
+*Nome Completo:* ${contato.value.trim()}
+*Telefone:* ${telefone.value.trim()}
+*Item Selecionado:* ${item}`;
 
-    <style>
-      :root {
-        --azul-marinho-claro: #1e3a5f;
-        --amarelo: #facc15;
-      }
+      const numeroWhatsApp = '5531986985930';
+      const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank');
+    }
 
-      .service-container {
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        height: 300px;
-        overflow: hidden;
-      }
-
-      .service-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 1rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-        cursor: pointer;
-      }
-
-      .service-img:hover {
-        transform: scale(1.05);
-      }
-
-      .service-caption {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.6);
-        color: white;
-        padding: 10px;
-        text-align: center;
-        border-bottom-left-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-        width: 100%;
-        box-sizing: border-box;
-      }
-
-      .service-container:hover .service-caption {
-        display: block;
-      }
-    </style>
-  </head>
-
-  <body class="bg-[var(--azul-marinho-claro)] text-white font-sans">
-    <header class="p-6 text-center bg-[var(--amarelo)] text-[var(--azul-marinho-claro)] font-bold text-xl">
-      Vita Ser - Engenharia e Serviços
-    </header>
-
-    <!-- SERVIÇOS -->
-    <section class="p-8 text-center">
-      <h2 class="text-3xl font-bold mb-6">Nossos Serviços</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="service-container">
-          <img src="serralheria.png" alt="Serralheria" class="service-img" />
-          <div class="service-caption">Serralheria - Estruturas metálicas, portões, grades e muito mais.</div>
-        </div>
-        <div class="service-container">
-          <img src="vidraceiro.jpg" alt="Vidraçaria" class="service-img" />
-          <div class="service-caption">Vidraçaria - Instalação de vidros temperados, janelas e boxes.</div>
-        </div>
-        <div class="service-container">
-          <img src="Notebook.jpg" alt="Notebooks e Computadores" class="service-img" />
-          <div class="service-caption">Assistência técnica em notebooks e computadores.</div>
-        </div>
-        <div class="service-container">
-          <img src="alvenaria.jpg" alt="Alvenaria" class="service-img" />
-          <div class="service-caption">Alvenaria - Reformas, construções e serviços de alvenaria em geral.</div>
-        </div>
-        <div class="service-container">
-          <img src="pintor.jpg" alt="Pintura" class="service-img" />
-          <div class="service-caption">Pintura residencial, predial e artística com acabamento profissional.</div>
-        </div>
-        <div class="service-container">
-          <img src="Planejados.jpg" alt="Móveis Planejados" class="service-img" />
-          <div class="service-caption">Móveis Planejados sob medida para todos os ambientes.</div>
-        </div>
-      </div>
-
-      <!-- Espaço reservado para futuras imagens no carrossel -->
-      <div id="carousel" class="mt-10 flex overflow-x-auto gap-4 p-4 bg-white rounded-xl text-black">
-        <!-- Adicione imagens aqui futuramente -->
-      </div>
-    </section>
-
-    <!-- SOBRE A EMPRESA -->
-    <section class="p-8 bg-white text-[var(--azul-marinho-claro)] text-center">
-      <h2 class="text-3xl font-bold mb-4">Sobre a Vita Ser</h2>
-      <p class="max-w-3xl mx-auto text-lg">
-        A <strong>Vita Ser - Engenharia e Serviços</strong> nasceu com o propósito de oferecer soluções completas em manutenção, reformas e assistência técnica, sempre com profissionalismo, compromisso e qualidade. Nossa equipe é formada por profissionais experientes nas áreas de serralheria, vidraçaria, informática, alvenaria, pintura e móveis planejados. Atendemos com dedicação para transformar projetos em realidade e oferecer mais conforto, segurança e praticidade para nossos clientes.
-      </p>
-    </section>
-
-    <!-- SOLICITE ORÇAMENTO -->
-    <section class="p-8 text-center">
-      <h2 class="text-3xl font-bold mb-6">Solicite um Orçamento</h2>
-      <form id="form-orcamento" class="max-w-md mx-auto space-y-4" onsubmit="return false;">
-        <input type="text" id="nome" name="nome" placeholder="Seu nome" class="w-full p-3 rounded-lg text-black" required />
-        <input type="email" id="email" name="email" placeholder="Seu e-mail" class="w-full p-3 rounded-lg text-black" required />
-        <textarea id="mensagem" name="mensagem" placeholder="Descreva o serviço desejado" class="w-full p-3 rounded-lg text-black" required></textarea>
-        <button onclick="enviarWhatsapp()" class="bg-[var(--amarelo)] text-[var(--azul-marinho-claro)] px-6 py-3 rounded-lg font-bold hover:opacity-90 transition">
-          Enviar pelo WhatsApp
-        </button>
-      </form>
-    </section>
-
-    <!-- RODAPÉ -->
-    <footer class="bg-[var(--azul-marinho-claro)] text-white text-center py-6 mt-8">
-      <p>&copy; 2025 Vita Ser - Engenharia e Serviços. Todos os direitos reservados.</p>
-      <p>Contato: (31) 98698-5930 | Email: contato@vitaser.com.br</p>
-    </footer>
-  </body>
+    function selecionarUnico(element) {
+      document.querySelectorAll('.toggleable').forEach(el => el.classList.remove('selected'));
+      element.classList.add('selected');
+    }
+  </script>
+</body>
 </html>
