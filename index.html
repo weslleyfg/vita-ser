@@ -70,7 +70,7 @@
     <form id="form-orcamento" class="max-w-lg mx-auto space-y-4" onsubmit="enviarFormulario(); return false;">
       <input type="text" id="nome" name="nome" placeholder="Nome do Personagem" class="w-full p-3 rounded-lg text-black" required pattern="[A-Za-zÀ-ÿ\s]+" />
       <input type="text" id="contato" name="contato" placeholder="Nome Completo" class="w-full p-3 rounded-lg text-black" required pattern="[A-Za-zÀ-ÿ\s]+" />
-      <input type="tel" id="telefone" name="telefone" placeholder=" 📱 Telefone" class="w-full p-3 rounded-lg text-black" required pattern="[0-9]+" />
+      <input type="tel" id="telefone" name="telefone" placeholder="Telefone" class="w-full p-3 rounded-lg text-black" required pattern="[0-9]+" />
       <button type="submit" class="bg-green-600 text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition">
         Enviar mensagem no WhatsApp
       </button>
@@ -102,11 +102,11 @@
 
       const item = selecionado.dataset.item;
 
-      const texto = `Olá! Gostaria de solicitar um orçamento.
-*Nome do Personagem:* ${nome.value.trim()}
-*Nome Completo:* ${contato.value.trim()}
-*Telefone:* ${telefone.value.trim()}
-*Item Selecionado:* ${item}`;
+      const texto = `Olá! Gostaria uma compra em moedas digitas kk's.
+*> Nome do Personagem:* ${nome.value.trim()}
+📞*> Nome Completo:* ${contato.value.trim()}
+📱*> Telefone:* ${telefone.value.trim()}
+*Quantidade solicitada:* ${item}`;
 
       const numeroWhatsApp = '5531986985930';
       const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
@@ -121,3 +121,4 @@
 </body>
 
 </html>
+
